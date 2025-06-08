@@ -100,33 +100,10 @@
   </div>
 </section>
 
-  <section id="join">
-    <h2>함께해요</h2>
-    <p>우리의 브랜드와 함께하는 방법을 알아보세요!</p>
-    <button onclick="alert('준비 중입니다!')">참여 신청</button>
-  </section>
-
-  <section id="contact">
-    <h2>문의</h2>
-    <form>
-      <input type="email" placeholder="이메일을 입력하세요" required />
-      <textarea placeholder="문의 내용을 작성하세요" required></textarea>
-      <button type="submit">보내기</button>
-    </form>
-  </section>
-
-<div id="reviews"></div>
-
-  <footer>
-    <p>ⓒ 2025 RE:CLASS. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
 	<!-- Chart.js 라이브러리 추가 (head 태그나 맨 아래 넣어도 됨) -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<!-- 차트 스크립트 -->
 <script>
   const ctx = document.getElementById('satisfactionChart').getContext('2d');
   new Chart(ctx, {
@@ -169,4 +146,26 @@
   });
 </script>
 
+  <section id="join">
+    <h2>함께해요</h2>
+    <p>우리의 브랜드와 함께하는 방법을 알아보세요!</p>
+    <button onclick="alert('준비 중입니다!')">참여 신청</button>
+  </section>
+
+  <section id="contact">
+    <h2>문의</h2>
+    <form>
+      <input type="email" placeholder="이메일을 입력하세요" required />
+      <textarea placeholder="문의 내용을 작성하세요" required></textarea>
+      <button type="submit">보내기</button>
+    </form>
+  </section>
+
+<div id="reviews"></div>
+
+  <footer>
+    <p>ⓒ 2025 RE:CLASS. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>

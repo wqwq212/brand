@@ -14,6 +14,7 @@
         <li><a href="#home">홈</a></li>
         <li><a href="#about">스토리</a></li>
         <li><a href="#products">제품</a></li>
+        <li><a href="#review-stats">브랜드에 대한 긍정 피드백</a></li>
         <li><a href="#join">참여</a></li>
         <li><a href="#contact">연락</a></li>
         <li><a href="#=review">후기</a></li>
@@ -93,6 +94,13 @@
     </div>
   </section>
 
+<section id="review-stats" style="padding: 30px 0; background: #f9f9f9;">
+  <div class="container">
+    <h2 style="text-align:center;">브랜드에 대한 긍정 피드백</h2>
+    <canvas id="satisfactionChart" width="400" height="200" style="margin: 30px auto; display: block;"></canvas>
+  </div>
+</section>
+
   <section id="join">
     <h2>함께해요</h2>
     <p>우리의 브랜드와 함께하는 방법을 알아보세요!</p>
@@ -124,4 +132,58 @@
   </footer>
   <script src="script.js"></script>
 </body>
+	<!-- Chart.js 라이브러리 추가 (head 태그나 맨 아래 넣어도 됨) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 후기 만족도 시각화 섹션 -->
+<section id="review-stats" style="padding: 30px 0; background: #f9f9f9;">
+  <div class="container">
+    <h2 style="text-align:center;">브랜드에 대한 긍정 피드백</h2>
+    <canvas id="satisfactionChart" width="400" height="200" style="margin: 30px auto; display: block;"></canvas>
+  </div>
+</section>
+
+<!-- 차트 스크립트 -->
+<script>
+  const ctx = document.getElementById('satisfactionChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['디자인', '착용감', '가격', '지속가능성', '재구매 의사'],
+      datasets: [{
+        label: '만족도 (%)',
+        data: [92, 87, 75, 88, 90],
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 99, 132, 0.6)'
+        ],
+        borderColor: [
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100
+        }
+      }
+    }
+  });
+</script>
+
 </html>
